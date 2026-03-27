@@ -1,0 +1,14 @@
+* regiao_administrativa		- Categórica Nominal
+* tipo_via			- Categórica Nominal (ESTRADAS E RODOVIAS / VIAS URBANAS)
+* tipo_veiculo_vitima		- Categórica Nominal (AUTOMOVEL / MOTOCICLETA / ONIBUS / CAMINHAO / NENHUM)
+* tipo_de_vitima		- Categórica Nominal (CONDUTOR / PASSAGEIRO / PEDESTRE)
+* sexo				- Categórica Nominal (MASCULINO / FEMININO)
+* idade				- Numérica Discreta
+* profissao			- Categórica Nominal
+* nacionalidade			- Categórica Nominal (BRASILEIRO / ESTRANGEIRO)
+* ano_sinistro			- Numérica discreta
+* mes_sinistro			- Numérica ordinal
+* dia_sinistro			- Numérica ordinal
+
+
+* gravidade_lesao (objetivo)	- Categórica Nominal (LEVE / GRAVE / FATAL) -> (LEVE / GRAVE (FATAL = GRAVE))
