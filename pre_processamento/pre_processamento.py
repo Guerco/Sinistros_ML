@@ -121,7 +121,7 @@ _le_nacionalidade   = LabelEncoder()
 _le_tp_vitima       = LabelEncoder()
 _le_tp_profissao    = LabelEncoder()
 _le_faixa_legal     = LabelEncoder()
-# _le_tp_regiao       = LabelEncoder()
+
 
 previsores.loc[:, 'sexo'] = _le_sexo.fit_transform(previsores.loc[:, 'sexo'])
 previsores['sexo'] = previsores['sexo'].astype('int64')
@@ -138,8 +138,9 @@ previsores['tipo_de_vitima'] = previsores['tipo_de_vitima'].astype('int64')
 previsores.loc[:, 'profissao'] = _le_tp_profissao.fit_transform(previsores.loc[:, 'profissao'])
 previsores['profissao'] = previsores['profissao'].astype('int64')
 
-# previsores.loc[:, 'regiao_administrativa'] = _le_tp_regiao.fit_transform(previsores.loc[:, 'regiao_administrativa'])
-# previsores['regiao_administrativa'] = previsores['regiao_administrativa'].astype('int64')
+
+
+
 
 # previsores.loc[:, 'faixa_etaria_legal'] = _le_faixa_legal.fit_transform(previsores.loc[:, 'faixa_etaria_legal'])
 # previsores['faixa_etaria_legal'] = previsores['faixa_etaria_legal'].astype('int64')
@@ -148,7 +149,14 @@ classe.loc[:, 'gravidade_lesao'] = _le_gravidade.fit_transform(classe.loc[:, 'gr
 classe['gravidade_lesao'] = classe['gravidade_lesao'].astype('int64')
 
 
+# Comentar bloco abaixo caso utilize variáveis dummy
+# _le_regiao       = LabelEncoder()
+# previsores.loc[:, 'regiao_administrativa'] = _le_regiao.fit_transform(previsores.loc[:, 'regiao_administrativa'])
+# previsores['regiao_administrativa'] = previsores['regiao_administrativa'].astype('int64')
 
+# _le_tp_veiculo       = LabelEncoder()
+# previsores.loc[:, 'tipo_veiculo_vitima'] = _le_tp_veiculo.fit_transform(previsores.loc[:, 'tipo_veiculo_vitima'])
+# previsores['tipo_veiculo_vitima'] = previsores['tipo_veiculo_vitima'].astype('int64')
 
 
 # =============================================================================
