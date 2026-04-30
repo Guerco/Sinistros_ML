@@ -29,7 +29,7 @@ _previsoes = _classificador.predict(previsores_teste)
 
 
 
-# Análise dos resultados (porcentagem de acertos e MATRIZ DE CONFUSÃO)
+# Análise dos resultados
 from sklearn.metrics import confusion_matrix, accuracy_score
 
 acuracia_teste = round(accuracy_score(classe_teste, _previsoes), 5)
