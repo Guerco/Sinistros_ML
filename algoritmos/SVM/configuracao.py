@@ -8,7 +8,7 @@ Created on Fri Apr 17 18:52:42 2026
 import pandas as pd
 
 # ===============================
-# Carregando base
+# carregando base
 # ===============================
 base = pd.read_csv(
     'C:/Users/Yuri Viana/Downloads/sinistros_sp_pessoas_2014-2025.csv',
@@ -23,27 +23,26 @@ base.columns = base.columns.str.strip().str.lower()
 print(base.columns)
 
 # ===============================
-# Usar apenas coluna alvo
+# usar apenas coluna alvo
 # ===============================
 print(base['gravidade_lesao'].value_counts())
 
-# Manter só LEVE e GRAVE
+# Manter só leve e grave
 base = base[base['gravidade_lesao'].isin(['LEVE', 'GRAVE'])]
 
 print("Após filtro:")
 print(base['gravidade_lesao'].value_counts())
 
-# VERIFICAÇÃO CRÍTICA
 print("Total de linhas:", len(base))
 
 # ===============================
-# Separação
+# separação
 # ===============================
 previsores = base.drop('gravidade_lesao', axis=1)
 classe = base['gravidade_lesao']
 
 # ===============================
-# Converter categóricos
+# converter categóricos
 # ===============================
 from sklearn.preprocessing import LabelEncoder
 
@@ -52,7 +51,7 @@ for coluna in previsores.columns:
         le = LabelEncoder()
         previsores[coluna] = le.fit_transform(previsores[coluna].astype(str))
 
-# Classe binária
+# classe binária
 le_classe = LabelEncoder()
 classe = le_classe.fit_transform(classe)
 
